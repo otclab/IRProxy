@@ -1,0 +1,273 @@
+#:kivy 1.9.1
+
+
+[NumpadKey@IRButton]:
+    text: ctx.title
+    pos_hint: ctx.at
+    size_hint: None, None
+    size: 50, 24
+    background_color: 0,0,1,1
+
+<IRProxy>:
+    orientation: 'tb-lr'
+    padding: 10,10,10,0
+    spacing: 10, 10
+    canvas:
+        Color:
+            rgba: .1,.8,.1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    GridLayout:
+        canvas:
+            Color:
+                rgba: .9,1,1,0,.6
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        cols: 2
+        size_hint: None, None
+        size: 180, 65+10
+        spacing: 30,6
+        padding: 0,0,0,10
+
+        IRButton:
+            text: '+VOL'
+            background_color: (0,0.8,0,1)
+
+        IRButton:
+            text: '+CH'
+            background_color: 0,0.5,0,1
+
+        IRButton:
+            text: '-VOL'
+            background_color: 0,0.8,0,1
+
+        IRButton:
+            text: '-CH'
+            background_color: 0,0.5,0,1
+
+    FloatLayout:
+        orientation: 'lr-tb'
+        padding: 12,12,12,0
+        size_hint: None, None
+        size: 180, 110
+        spacing: 3,5
+        canvas:
+            Color:
+                rgba: 0.25,1,0.4, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        IRButton:
+            text: '1'
+            pos_hint: {'center_x': .18, 'center_y': 0.84}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '2'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.84}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '3'
+            pos_hint: {'center_x': 0.82, 'center_y': 0.84}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '4'
+            pos_hint: {'center_x': 0.18, 'center_y': 0.61}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '5'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.61}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '6'
+            pos_hint: {'center_x': 0.82, 'center_y': 0.61}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '7'
+            pos_hint: {'center_x': 0.18, 'center_y': 0.38}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '8'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.38}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '9'
+            pos_hint: {'center_x': 0.82, 'center_y': 0.38}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: '0'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+            size_hint: None, None
+            size: 50, 24
+            background_color: 0,0,1,1
+
+    FloatLayout:
+        padding: 65,0,0,5
+        size_hint: None, None
+        size: 180,100
+        canvas:
+            Color:
+                rgba: 0.7,0.05,0.21,.8
+
+            Rectangle:
+                pos: self.pos[0] + 13, self.pos[1]
+                size: self.size[0] -26, self.size[1]
+
+        IRButton:
+            text: 'INFO'
+            italic: True
+            bold: True
+            font_size: 12
+            size_hint: None, None
+            pos_hint: {'center_x': 0.25, 'center_y': 0.82}
+            size: 50, 24
+            background_color: 1,0,0,1
+
+        IRButton:
+            text: 'GUIDE'
+            italic: True
+            bold: True
+            font_size: 12
+            size_hint: None, None
+            pos_hint: {'center_x': 0.75, 'center_y': 0.82}
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        IRButton:
+            text: 'BACK'
+            italic: True
+            bold: True
+            font_size: 12
+            size_hint: None, None
+            pos_hint: {'center_x': 0.25, 'center_y': 0.18}
+            size: 50, 24
+            background_color: 0,0,1,1
+
+        NumpadKey:
+            title: 'AUDIO'
+            italic: True
+            bold: True
+            font_size: 12
+            at: {'center_x': 0.75, 'center_y': 0.18}
+            offs: 10
+
+        IRButton:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 8
+                Line:
+                    circle: self.pos[0] + 15 ,self.pos[1] + 15, 5
+                    width: 1.5
+
+
+            text: 'OK'
+            italic: True
+            bold: True
+            font_size: 8
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size: 30, 30
+            background_color: 0,0,1,1
+
+        IRButton:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 8
+                Line:
+                    points: self.pos[0] + 7 ,self.pos[1] + 13, self.pos[0] + 15,self.pos[1]+20, self.pos[0] + 23 ,self.pos[1] + 13
+                    width: 1.5
+
+
+            text: 'UP'
+            italic: True
+            bold: True
+            font_size: 8
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.83}
+            size: 30, 30
+            background_color: 0,0,1,1
+
+        IRButton:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 8
+                Line:
+                    points: self.pos[0] + 7 ,self.pos[1] + 17, self.pos[0] + 15,self.pos[1]+10, self.pos[0] + 23 ,self.pos[1] + 17
+                    width: 1.5
+
+
+            text: 'DOWN'
+            italic: True
+            bold: True
+            font_size: 8
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.17}
+            size: 30, 30
+            background_color: 0,0,1,1
+
+        IRButton:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 8
+                Line:
+                    points: self.pos[0] + 13 ,self.pos[1] + 7, self.pos[0] + 20,self.pos[1]+15, self.pos[0] + 13 ,self.pos[1] + 23
+                    width: 1.5
+
+
+            text: 'RIGHT'
+            italic: True
+            bold: True
+            font_size: 8
+            size_hint: None, None
+            pos_hint: {'center_x': 0.685, 'center_y': 0.5}
+            size: 30, 30
+            background_color: 0,0,1,1
+
+        IRButton:
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 8
+                Line:
+                    points: self.pos[0] + 20 ,self.pos[1] + 7, self.pos[0] + 13,self.pos[1]+15, self.pos[0] + 20 ,self.pos[1] + 23
+                    width: 1.5
+
+
+            text: 'LEFT'
+            italic: True
+            bold: True
+            font_size: 8
+            size_hint: None, None
+            pos_hint: {'center_x': 0.315, 'center_y': 0.5}
+            size: 30, 30
+            background_color: 0,0,1,1
+

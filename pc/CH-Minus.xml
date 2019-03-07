@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IR_CODE>
+   <SOURCE>
+       DECODIFICADOR MOVISTAR
+   </SOURCE>
+
+   <ID>
+       CH-Minus
+   </ID>
+
+   <CARRIER unit = "3.125000e-08 seg"> 
+      <PERIOD> 559 </PERIOD>
+      <DUTY_CYCLE> 187 </DUTY_CYCLE>
+   </CARRIER>
+
+   <PATTERN type="array" unit="CARRIER_PERIOD">
+
+       <PULSE> 
+         <HIGH> 55 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 36 </HIGH>
+         <LOW> 72 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 36 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 72 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 72 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 18 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 54 </LOW>
+       </PULSE>
+
+       <PULSE> 
+         <HIGH> 18 </HIGH>
+         <LOW> 4463 </LOW>
+       </PULSE>
+
+   </PATTERN>
+</IR_CODE>
