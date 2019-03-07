@@ -43,8 +43,8 @@
  y genera los archivos XML de especificación de los patrones correspondientes, los
  cuales pueden ser usados por la aplicación en Python para la PC.
 
- Etapa Final 
- ~~~~~~~~~~~
+### Etapa Final 
+
  
  El diseño del equipo final incluye una fuente DC/DC para compartir la alimentación del 
  decodificador, la cual proviene de un adaptador de 12VDC, por lo que se incluye un 
@@ -52,8 +52,7 @@
  lazo abierto seguido de un regulador líneal de 3.3V. El microcontrolador auxiliar también
  se encarga de su control.
  
- Notas
- ~~~~~
+### Notas
 
  (\*1) : Para la pruebas de concepto se utilizo el PIC16F1619, un sub-siguiente periodo de
         prueba se realizo con el PIC16F18313. En la etapa final para trabajo constante se

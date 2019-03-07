@@ -3,6 +3,7 @@
 *.csv
 .idea/
 .ipynb/
+secrets*
 
 # MPLABX
 *.mk
