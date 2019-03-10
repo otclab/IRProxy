@@ -29,7 +29,7 @@ ssid = WIFI_SSID
 password = WIFI_PSW
 
 # IP y puerto del broker MQTT (estándar para comunicación no cifrada}) :
-broker_ip = MQQT_BROKER
+broker_ip = MQTT_BROKER
 port = MQTT_PORT
 
 # ID del cliente y tópico al que se suscribe :

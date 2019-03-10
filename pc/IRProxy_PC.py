@@ -21,7 +21,7 @@ def MQTTPublish(payload):
   """
   Publica el mensaje, aka. código de la tecla, en el tópico designado (topic), en el broker MQTT (host).
   """
-  host = MQQT_BROKER
+  host = MQTT_BROKER
   port = MQTT_PORT
 
   topic = "ir_proxy/deco_tv"
