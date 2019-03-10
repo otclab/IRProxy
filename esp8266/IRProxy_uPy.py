@@ -54,8 +54,8 @@ data = bytearray(50)
 
 def show_APs() :
   for n, ap in enumerate(network.WLAN(network.STA_IF).scan()) :
-    print(' {:d}: {:s} [{:d}dbm] CH{:2d} {:12s} {:s}'.format(n, ap[0], ap[3], ap[2]
-     ('Abierta', 'WEP', 'WPA-PSK', 'WPA2-PSK', 'WPA/WPA2-PSK')[ap[4]]), ('Visible', 'Oculta')[ap[5]])
+    print(' {:d}: {:s} [{:d}dbm] CH{:2d} {:12s} {:s}'.format(n, ap[0], ap[3], ap[2],
+     ('Abierta', 'WEP', 'WPA-PSK', 'WPA2-PSK', 'WPA/WPA2-PSK')[ap[4]], ('Visible', 'Oculta')[ap[5]]))
   print('\n')
 
 
