@@ -1008,8 +1008,10 @@ volatile char dummy ;
 void main(void) {
 enum {
   STARTUP_EXTENDED_DELAY_STAGE ,
-  STARTUP_DELAY_STAGE          ,
-  STARTUP_STAGE                ,
+  PS_STARTUP_DELAY_STAGE       ,
+  PS_STARTUP_STAGE             ,
+  EPS_STARTUP_DELAY_STAGE       ,
+  EPS_STARTUP_STAGE             ,  
   PROXY_STAGE
 } stage ;
 uint8_t n, b ;
@@ -1051,10 +1053,10 @@ uint8_t n, b ;
   if ((reset_retries.validation_key == RETRIES_VALID_KEY) 
                                          && (reset_retries.cnt > MAX_RETRIES_REQUEST)) {
     stage = STARTUP_EXTENDED_DELAY_STAGE ;
-    stage = STARTUP_DELAY_STAGE ;
+    stage = PS_STARTUP_DELAY_STAGE ;
   }
   else {
-    stage = STARTUP_DELAY_STAGE ;
+    stage = PS_STARTUP_DELAY_STAGE ;
   }
 
   // Se asegura que la clave de validación del arranque sea válida en los subsiguientes
@@ -1077,23 +1079,48 @@ uint8_t n, b ;
   while (1) {
     switch (stage) {
       case STARTUP_EXTENDED_DELAY_STAGE :
-        if (tick_cnt > (int16_t)(EXTENDED_DELAY_TIME/TICK_PERIOD)) stage = STARTUP_STAGE ;
+        if (tick_cnt > (int16_t)(EXTENDED_DELAY_TIME/TICK_PERIOD)) {
+          stage = PS_STARTUP_STAGE ;
+          tick_cnt = 0 ;
+        }
 
         // Durante esta etapa solo la tarea de control de tiempo esta activa :
         Tick_task() ;
       break ;
       
-      case STARTUP_DELAY_STAGE :
+      case PS_STARTUP_DELAY_STAGE :
         //if (tick_cnt > (uint16_t)(NORMAL_DELAY_TIME/TICK_PERIOD)) stage = STARTUP_STAGE ;
-        if (tick_cnt > 10) stage = STARTUP_STAGE ;
+        if (tick_cnt > 10) {
+          stage = PS_STARTUP_STAGE ;
+          tick_cnt = 0 ;
+        }
+        
         // Durante esta etapa solo la tarea de control de tiempo esta activa :
         Tick_task() ;
       break ;
 
-      case STARTUP_STAGE :
+      case PS_STARTUP_STAGE :
         // Arranca el Pre-regulador :
         SDPWM_start() ;
 
+        stage = EPS_STARTUP_DELAY_STAGE ;
+        tick_cnt = 0 ;
+
+        Tick_task() ;
+      break ;
+
+      case EPS_STARTUP_DELAY_STAGE :
+        //if (tick_cnt > (uint16_t)(NORMAL_DELAY_TIME/TICK_PERIOD)) stage = STARTUP_STAGE ;
+        if (tick_cnt > 10) {
+          stage = EPS_STARTUP_STAGE ;
+          tick_cnt = 0 ;
+        }
+        
+        // Durante esta etapa solo la tarea de control de tiempo esta activa :
+        Tick_task() ;
+      break ;
+
+      case EPS_STARTUP_STAGE :
         // Configura el temporizador del guardián del módulo ESP8266 :
         ESP8266Watchdog_init() ;
 
