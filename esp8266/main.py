@@ -2,13 +2,13 @@
 
 """ Libreto de Arranque.
 """
-import ir_proxy_py
+import IRProxy_uPy
 
 while 1 :
   try :
-    ir_proxy_py.task()
+    IRProxy_uPy.task()
   except Exception as e :
-    print("IR_proxy task terminated \n\n", e)
+    print("IRProxy task terminated \n\n", e)
     print(25*"-")
 
 
