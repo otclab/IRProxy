@@ -69,6 +69,7 @@ def client_task(client) :
   if broker_cnt > 0 :
     led_broker_OK.on()
     broker_cnt -= 1
+    
   else :
     # TO DO : Mecanismo de verificación que la conexión con el broker esta activa.
     led_broker_OK.off()
@@ -107,7 +108,7 @@ def wifi_connect() :
 # Función de callback para el proceso de los mensajes al tópico suscrito. Decodifica el mensaje
 # para convertirlo en la secuencia de bytes que representa.
 def relay_code(topic, code_str) :
-  global keepalive_cnt
+  global keepalive_cnt, broker_cnt
 
   def print_msg(msg) : print('Mensaje recibido : {:s}'.format(code_str))
 
@@ -128,18 +129,21 @@ def relay_code(topic, code_str) :
     print('Done\n\n')
     
     # Se señaliza la recepción (como consecuencia se apaga el LED del broker brevemente) :
-    broker_cnt = 10
+    broker_cnt = 1
+    
+    # Finalmente se reinicia el periodo de espera del guardián :
+    keepalive_cnt = 0
 
   else :
     # El mensaje no tiene la longitud correcta :
     print('El mensaje recibido no tiene una longitud par.\n')
     print_msg(code_str)
 
-    # Finalmente se reinicia el periodo de espera del guardián :
-    keepalive_cnt = 0
-
+    
 # task
 def task() :
+  global keepalive_cnt, wifi_timeout, broker_ip, topic
+
   while 1 :
     num_retries = 5
     # Intenta recuperar la conexión Wifi :
@@ -156,7 +160,7 @@ def task() :
     num_retries = 5
     for n in range(num_retries) :
       try :
-        print('Conectándose al Servidor MQTT [{:d}/{:d}]...'.format(n+1, num_retries), end='')
+        print('[{:d}/{:d}] Conectándose al Servidor MQTT : {:s} ... '.format(n+1, num_retries, broker_ip), end='')
         
         # Nótese que el ID del cliente debe diferente a otros, al menos en redes locales una forma
         # de asegurar su singularidad es agregar el IP :
@@ -184,7 +188,8 @@ def task() :
     num_retries = 5
     for n in range(num_retries) :
       try :
-        print('Suscribiéndose al Tópico [{:d}/{:d}]...'.format(n+1, num_retries), end='')
+        print('[{:d}/{:d}] Suscribiéndose al Tópico <<{:s}>> ... '.format(n+1, num_retries, topic), end='')
+        print 
         client.subscribe(topic)
         print('suscrito!')
         break 
