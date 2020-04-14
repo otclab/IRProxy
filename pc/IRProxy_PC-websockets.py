@@ -22,11 +22,11 @@ def MQTTPublish(payload):
   Publica el mensaje, aka. código de la tecla, en el tópico designado (topic), en el broker MQTT (host).
   """
   host = MQTT_BROKER
-  port = MQTT_PORT
+  port = 9001
 
   topic = "ir_proxy/deco_tv"
   try :
-    publish.single(topic, payload, hostname = host, port = port)
+    publish.single(topic, payload, hostname = host, port = port, transport='websockets')
     print("Enviando : %s" % payload)
   except :
     print("Fallo la publicación del código")
@@ -82,7 +82,6 @@ class IRButton(Button):
     else :
       print("La tecla <%s> no tiene definición." % self.text)
       print(Window.size)
-      print('Window :', Window.top, Window.left)
 
 #class IRProxy(GridLayout):
 class IRProxy(StackLayout):
@@ -97,11 +96,7 @@ class IRProxyApp(App):
   u"""
   Clase para la aplicación de Kivy.
   """
-  def __init__(self, *args, **kwargs) :
-    App.__init__(self)
-    Window.top = 350
-    Window.left = -239
-      
+
   def build(self):
     return IRProxy()
 
