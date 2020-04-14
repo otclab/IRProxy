@@ -374,7 +374,7 @@ int16_t tick_cnt ;
 #define VLINR_MIM                      ( 4.3)   /* Voltios  */
 #define VSCHOTTKY                      ( 2.0)   /* Voltios  */
 #define VSTEPDOWN_MIN                  (VLINR_MIM + VSCHOTTKY)
-#define VDC_IN                         (9)/*(12.0)   /* Voltios  */
+#define VDC_IN                         (12.0)   /* Voltios  */
 #define VDIODE                         ( 0.6)   /* Voltios  */
 #define PULSE_WIDTH                    (128)    /* TOSC     */
 #define NCO_PERIOD                     (PULSE_WIDTH*(VDC_IN - VDIODE)/VSTEPDOWN_MIN)
