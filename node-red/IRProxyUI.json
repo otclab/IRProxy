@@ -1,0 +1,558 @@
+[
+    {
+        "id": "eb2f80c7.29df",
+        "type": "tab",
+        "label": "IRCtrrUI",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5a954ae8.3f0554",
+        "type": "debug",
+        "z": "eb2f80c7.29df",
+        "name": "debug-win",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 630,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "bffe4cec.6b726",
+        "type": "mqtt out",
+        "z": "eb2f80c7.29df",
+        "name": "tx_Vol+",
+        "topic": "ir_proxy/deco_tv",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cb36cd77.3052f",
+        "x": 620,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "23142f13.7e5d5",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "2cc73f20.d2027",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "VOL+",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "volume_up",
+        "payload": "0111AF04BB01373624481224123612361236123612361236126C1224122412241236126C121212DD22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "bffe4cec.6b726",
+                "5a954ae8.3f0554",
+                "5d2f283e.856a48"
+            ]
+        ]
+    },
+    {
+        "id": "c3dd28ed.f69f48",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "2cc73f20.d2027",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "VOL-",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "volume_down",
+        "payload": "0111AF04BB01373624481224123612361236123612361248125A12361224121212361248124812CB22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "97017d0d.e4d76",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "2cc73f20.d2027",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "CH+",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BB01373624481224123612361236123612361248125A12241236121212361236125A12CB22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "1012ca20.8246a6",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "2cc73f20.d2027",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "CH-",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BB01373624481224123612361236123612361248123612481236121212361236123612EF22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "24f7951d.ac776a",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BA0137362448122412361236123612361236124812361248122412241236126C123612BA22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "df974e7.92f8db",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BA01373624481224123612361236123612361248124812361224122412361236123612EF22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "bfddafe2.9d0d3",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "3",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BA01373624481224123612361236123612361248125A12241224122412361236124812DD22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "b6619258.b5a8f",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "4",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA013736244812241236123612361236123612361248125A24361236126C122412CB22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "667a77eb.bd38e8",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "5",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA01373624481224123612361236123612361236125A124824361236126C123612B922",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "e610366c.316758",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 7,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "6",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA01373624481224123612361236123612361236126C1236243612361236123612EF22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "6a6187d4.acab28",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "7",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA013736244812241236123612361236123612481224126C243612361236124812DD22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "ba285c6c.f92f8",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "9",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA0137362448122412361236123612361236124812481248243612361236126C12BA22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "45b0392c.ad64f8",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 9,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "8",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0110AF04BA013736244812241236123612361236123612481236125A243612361236125A12CB22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "b501a1af.de3ff",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "b7b28971.8a7f88",
+        "order": 12,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "0",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0111AF04BA013736244812241236123612361236123612361248125A121212241236126C123612BA22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "cbeb4205.d6d92",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "38ec938d.92624c",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "INFO",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "perm_device_information",
+        "payload": "0111AF04BA013736244812241236123612361236123612481224125A122412241236126C122412CB22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 600,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "544f2bca.28c9e4",
+        "type": "ui_button",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "38ec938d.92624c",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "BACK",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "undo",
+        "payload": "0110AF04BA013736244812241236123612361236123612361248124812482436126C121212DD22",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 640,
+        "wires": [
+            [
+                "bffe4cec.6b726"
+            ]
+        ]
+    },
+    {
+        "id": "5d90b274.2cdecc",
+        "type": "ui_audio",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "group": "2cc73f20.d2027",
+        "voice": "es-US",
+        "always": true,
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5d2f283e.856a48",
+        "type": "change",
+        "z": "eb2f80c7.29df",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Aumentando el Volumen",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "5d90b274.2cdecc"
+            ]
+        ]
+    },
+    {
+        "id": "cb36cd77.3052f",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.112.1",
+        "port": "1883",
+        "clientid": "NodeJS",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "2cc73f20.d2027",
+        "type": "ui_group",
+        "z": "",
+        "name": "CONTROL",
+        "tab": "5add70a3.9243a",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "b7b28971.8a7f88",
+        "type": "ui_group",
+        "z": "",
+        "name": "NUMPAD",
+        "tab": "5add70a3.9243a",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "38ec938d.92624c",
+        "type": "ui_group",
+        "z": "",
+        "name": "INFO",
+        "tab": "5add70a3.9243a",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5add70a3.9243a",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Control IR",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
