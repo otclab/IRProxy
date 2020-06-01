@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name IRProxy)(type Legacy)(uri ${KIPRJMOD}/IRProxy.lib)(options "")(descr ""))
+)
